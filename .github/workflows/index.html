@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rishabh | Cyberpunk Portfolio</title>
+
+<style>
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #05010a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ================= CYBER GRID BACKGROUND ================= */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: 
+        linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: rotate(15deg);
+    animation: moveGrid 20s linear infinite;
+    z-index: -2;
+}
+
+@keyframes moveGrid {
+    0% { transform: translate(0,0) rotate(15deg); }
+    100% { transform: translate(-60px,-60px) rotate(15deg); }
+}
+
+/* ================= NEON HEADER ================= */
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.glitch {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0ff;
+    position: relative;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #f0f, 0 0 40px #0ff;
+    animation: flicker 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: "Rishabh Pandey";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glitch::before {
+    color: #f0f;
+    animation: glitchTop 2s infinite linear;
+}
+
+.glitch::after {
+    color: #0ff;
+    animation: glitchBottom 2s infinite linear;
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px,-2px); }
+    40% { transform: translate(2px,2px); }
+    60% { transform: translate(-1px,1px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px,2px); }
+    40% { transform: translate(-2px,-2px); }
+    60% { transform: translate(1px,-1px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+/* ================= NAV ================= */
+nav {
+    margin-top: 20px;
+}
+nav a {
+    color: #0ff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #f0f;
+    text-shadow: 0 0 10px #f0f;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.2);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #0ff;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 10px;
+    background: linear-gradient(90deg,#0ff,#f0f);
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #0ff, 0 0 40px #f0f;
+}
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(0,255,255,0.2);
+}
+
+/* ================= PARTICLES CANVAS ================= */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+    <div class="glitch">Rishabh Pandey</div>
+    <p>Cyberpunk Web Developer • Android Builder • Future Engineer</p>
+
+    <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    
+    <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="about">
+    <h2>👾 About Me</h2>
+    <div class="card">
+        I am a diploma Computer Science student building futuristic apps, Android games, and web systems like CampusConnect.  
+        My goal is to become a high-income developer through real-world projects.
+    </div>
+</section>
+
+<section id="projects">
+    <h2>🚀 Projects</h2>
+
+    <div class="card">
+        <h3>CampusConnect</h3>
+        <p>Student networking platform for colleges & alumni.</p>
+    </div>
+
+    <div class="card">
+        <h3>Bike Racing Game</h3>
+        <p>Motion-controlled Android racing game using sensors.</p>
+    </div>
+
+    <div class="card">
+        <h3>Calculator App</h3>
+        <p>Minimal Java-based Android calculator.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>⚡ Skills</h2>
+    <div class="card">
+        HTML • CSS • JavaScript • Java • Android Studio • UI Design • GitHub
+    </div>
+</section>
+
+
+
+
+
+
+<section id="contact">
+    <h2>📡 Contact Me</h2>
+
+    <div class="card">
+        <h3>Let's Connect</h3>
+
+        <p>📞 Phone: <a href="tel:+919650513168">+91 9650513168</a></p>
+
+        <p>📧 Email:
+            <a href="mailto:rp0089891@gmail.com">
+                rp0089891@gmail.com
+            </a>
+        </p>
+
+        <a href="mailto:rp0089891@gmail.com" class="btn">
+            📧 Send Email
+        </a>
+
+        <a href="tel:+919650513168" class="btn">
+            📞 Call Me
+        </a>
+    </div>
+</section>  
+<script>
+function sendMsg(){
+    document.getElementById("status").innerText =
+    "⚡ Signal received. I'll respond soon.";
+}
+
+/* ========== PARTICLE SYSTEM ========== */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*2,
+        dx: (Math.random()-0.5)*1.5,
+        dy: (Math.random()-0.5)*1.5
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "#0ff";
+
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>
